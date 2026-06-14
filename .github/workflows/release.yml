@@ -24,5 +24,6 @@ jobs:
       target:         ${{ matrix.target }}
       distro-release: ${{ matrix.distro-release }}
       distro-channel: ${{ matrix.distro-channel }}
+      org:            ${{ secrets.AVOCADO_CONNECT_ORG }}
     secrets:
       connect-token: ${{ secrets.AVOCADO_CONNECT_TOKEN }}

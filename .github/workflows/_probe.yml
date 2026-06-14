@@ -1,0 +1,19 @@
+name: Probe
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  baseline:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "actions work on this repo"
+
+  call-reusable-no-hyphen-refs:
+    # Calls the reusable workflow passing ONLY the non-hyphen input (target).
+    # Hyphenated inputs (distro-release, etc.) fall back to their defaults, so the
+    # caller has no hyphenated expression to (mis)parse. Isolates cross-repo access
+    # + callee parsing from the hyphen-in-expression question.
+    uses: avocado-linux/actions/.github/workflows/extension-test.yml@jschneck/ext-ci-helpers
+    with:
+      target: qemux86-64

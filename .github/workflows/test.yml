@@ -1,9 +1,7 @@
 name: Test
 
-# "Does it build" check on PRs. The matrix lives here (the caller owns it); each
-# leg calls the single-combo reusable helper. Add rows for more targets/feeds.
-#
-# Pinned to the actions dev branch while we iterate pre-v1; switch to @v1 once cut.
+# "Does it build" check on PRs. The matrix lives here (the caller owns it); each leg
+# calls the single-combo reusable helper. Add rows for more targets/feeds as needed.
 on:
   pull_request:
   workflow_dispatch:
@@ -15,7 +13,7 @@ jobs:
       matrix:
         include:
           - { target: qemux86-64, distro-release: "2026", distro-channel: edge }
-    uses: avocado-linux/actions/.github/workflows/extension-test.yml@jschneck/ext-ci-helpers
+    uses: avocado-linux/actions/.github/workflows/extension-test.yml@v1
     with:
       target:         ${{ matrix.target }}
       distro-release: ${{ matrix.distro-release }}

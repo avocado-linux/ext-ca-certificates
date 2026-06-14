@@ -2,7 +2,7 @@ supported_targets: '*'
 
 extensions:
   avocado-ext-ca-certificates:
-    version: 2024.1.0
+    version: 0.1.0
     release: r0
     summary: Trusted CA certificate bundle for system SSL
     description: |

@@ -11,7 +11,7 @@ extensions:
       OpenSSL-using services don't need a runtime workaround to assemble
       the bundle on first boot.
     license: Apache-2.0
-    url: https://github.com/avocadolinux/avocado-os
+    url: https://github.com/avocado-linux/ext-ca-certificates
     vendor: Avocado Linux <info@avocadolinux.org>
 
     package_files:
